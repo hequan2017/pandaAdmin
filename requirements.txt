@@ -1,0 +1,9 @@
+celery
+Django
+django-celery-beat
+django-celery-results
+django-cors-headers
+django-crispy-forms
+django-filter
+django-pure-pagination
+djangorestframework
