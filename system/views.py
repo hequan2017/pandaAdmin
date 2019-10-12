@@ -17,8 +17,37 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import permissions
 from rest_framework import generics
-
+from system.models import Test
+from rest_framework import permissions
+from rest_framework import generics
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.pagination import PageNumberPagination
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from system.serializers import TestSerializer
 logger = logging.getLogger('system')
+
+
+#         drf 中文文档   http://drf.jiuyou.info/#/drf/requests
+class TestList(generics.ListCreateAPIView):
+    queryset = Test.objects.get_queryset().order_by('id')
+    serializer_class = TestSerializer
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
+    filter_fields = ('id', 'date','name')
+    search_fields = ('id', 'name',)
+    permission_classes = (permissions.DjangoModelPermissions,)  # 继承 django的权限
+
+
+class TestDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Test.objects.get_queryset().order_by('id')
+    serializer_class = TestSerializer
+    permission_classes = (permissions.DjangoModelPermissions,)
+
+
+
+
 
 
 class UserInfo(APIView):

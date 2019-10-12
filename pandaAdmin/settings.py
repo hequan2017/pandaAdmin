@@ -174,7 +174,7 @@ PAGINATION_SETTINGS = {
 }
 
 # 表格table 一页 展示数据
-DISPLAY_PER_PAGE = 15
+DISPLAY_PER_PAGE = 10
 
 ## celery 4
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'

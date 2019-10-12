@@ -1,5 +1,5 @@
 from django.contrib import admin
-from system.models import Users
+from system.models import Users, Test
 from django.contrib.auth.admin import UserAdmin
 
 
@@ -28,5 +28,7 @@ class UsersAdmin(UserAdmin):
 
 
 admin.site.register(Users, UsersAdmin)
+admin.site.register(Test)
+
 admin.site.site_header = '管理后台'
 admin.site.site_title = admin.site.site_header

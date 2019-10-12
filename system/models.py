@@ -18,3 +18,19 @@ class Users(AbstractUser):
     def __str__(self):
         return self.username
 
+
+class Test(models.Model):
+    date = models.CharField(max_length=96, verbose_name='日期', blank=True, null=True, )
+    name = models.CharField(max_length=96, verbose_name='姓名', blank=True, null=True, )
+    address = models.CharField(max_length=96, verbose_name='地址', blank=True, null=True, )
+
+    # c_time = models.DateTimeField(auto_now_add=True, null=True, verbose_name='创建时间', blank=True)
+    # u_time = models.DateTimeField(auto_now=True, null=True, verbose_name='更新时间', blank=True)
+
+    class Meta:
+        db_table = "test"
+        verbose_name = "测试"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
