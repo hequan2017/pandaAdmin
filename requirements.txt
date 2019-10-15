@@ -7,3 +7,4 @@ django-crispy-forms
 django-filter
 django-pure-pagination
 djangorestframework
+django-rest-swagger
