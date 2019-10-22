@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hequan
+  labels:
+    app: hequan
+spec:
+  selector:
+    matchLabels:
+      app: hequan
+      release: stable
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: hequan
+        release: stable
+    spec:
+      containers:
+      - name: hequan
+        image: nginx
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: hequan
+          containerPort: 80

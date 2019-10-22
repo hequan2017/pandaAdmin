@@ -46,10 +46,6 @@ class TestDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (permissions.DjangoModelPermissions,)
 
 
-
-
-
-
 class UserInfo(APIView):
     """
     获取用户信息
@@ -65,7 +61,7 @@ class UserInfo(APIView):
             'access': list(obj.get_all_permissions()) + ['admin'] if obj.is_superuser else list(
                 obj.get_all_permissions()),
             'token': token,
-            'avatar': 'https://file.iviewui.com/dist/a0e88e83800f138b94d2414621bd9704.png'
+            'avatar': ''
         }
         return HttpResponse(json.dumps(result))
 
@@ -81,98 +77,6 @@ class UserLogout(APIView):
             "status": True
         }
         return HttpResponse(json.dumps(result))
-
-
-class Menu(APIView):
-
-    def post(self, request):
-        result = [
-
-            {
-                "path": '/assets',
-                "name": 'assets',
-                "meta": {
-                    "icon": 'md-menu',
-                    "title": '资产管理'
-                },
-                "component": 'Main',
-                "children": [
-                    {
-                        'path': 'ecs',
-                        'name': 'ecs',
-                        'meta': {
-                            'access': ['assets.view_ecs'],
-                            'icon': 'md-funnel',
-                            'title': 'ecs'
-                        },
-                        'component': 'assets/ecs/ecs-list'
-                    }
-                ]
-            },
-            # {
-            #     "path": '/multilevel',
-            #     "name": 'multilevel',
-            #     "meta": {
-            #         "icon": 'md-menu',
-            #         "title": '多级菜单'
-            #     },
-            #     "component": 'Main',
-            #     "children": [
-            #         {
-            #             "path": '/level_2_1',
-            #             "name": 'level_2_1',
-            #             "meta": {
-            #                 "icon": 'md-funnel',
-            #                 "title": '二级-1'
-            #             },
-            #             "component": 'multilevel/level-2-1'
-            #         },
-            #
-            #     ]
-            # },
-            {
-                "path": '/k8s',
-                "name": 'k8s',
-                "meta": {
-                    "icon": 'md-menu',
-                    "title": '多级菜单'
-                },
-                "component": 'Main',
-                "children": [
-                    {
-                        "path": '/pods',
-                        "name": 'pods',
-                        "meta": {
-                            "icon": 'md-funnel',
-                            "title": 'pods',
-                        },
-                        "component": 'k8s/k8s-pods'
-                    },
-                    {
-                        "path": '/webssh/:name/:namespace',
-                        "name": 'webssh',
-                        "meta": {
-                            "icon": 'md-funnel',
-                            "title": 'webssh',
-                            "hideInMenu": "true",
-                        },
-                        "component": 'k8s/k8s-webssh'
-                    }
-
-                ]
-            }
-        ]
-        return HttpResponse(json.dumps(result))
-
-
-def logout_view(request):
-    """
-    注销
-    :param request:
-    :return:
-    """
-    logout(request)
-    return redirect('system:login')
 
 
 class DisableCSRFCheck(object):

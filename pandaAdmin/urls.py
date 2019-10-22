@@ -26,7 +26,7 @@ API_DESCRIPTION = '文档'
 urlpatterns = [
     path('system/', include('system.urls', namespace='system')),
     path('admin/', admin.site.urls, ),
-    path('api/token', views.obtain_auth_token),
-    path('api/docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION, authentication_classes=[],
+    path('token', views.obtain_auth_token),
+    path('docs', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION, authentication_classes=[],
                                         permission_classes=[])),
 ]
