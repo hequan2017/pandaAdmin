@@ -15,6 +15,10 @@
 * 项目名字: husky
 * cbv 编程方式
 
+## 前端地址
+> https://github.com/hequan2017/panda 
+
+
 ## 远端环境配置
 
 * 安装centos 7.6系统
