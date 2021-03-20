@@ -86,7 +86,7 @@ itypes==1.1.0
 javascripthon==0.10
 jedi==0.12.0
 jieba==0.39
-Jinja2==2.10
+Jinja2==2.11.3
 jsonfield==2.0.2
 jsonpatch==1.23
 jsonpointer==2.0
