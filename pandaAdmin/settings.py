@@ -173,7 +173,7 @@ PAGINATION_SETTINGS = {
     'SHOW_FIRST_PAGE_WHEN_INVALID': True,
 }
 
-# 表格table 一页 展示数据
+# 表格table 一�?展示数据
 DISPLAY_PER_PAGE = 10
 
 ## celery 4
@@ -197,7 +197,7 @@ CELERY_ENABLE_UTC = False
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
-## 钉钉 报警机器人 地址  调用地方为 system.tasks.ding_ding_to_info
+## 钉钉 报警机器�?地址  调用地方�?system.tasks.ding_ding_to_info
 web_hook_url = ""
 
 ## rest api
@@ -209,7 +209,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer'  # 注释掉 可以关闭  api web界面
+        'rest_framework.renderers.BrowsableAPIRenderer'  # 注释�?可以关闭  api web界面
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         # 'rest_framework.permissions.AllowAny',
@@ -229,5 +229,5 @@ CORS_ORIGIN_WHITELIST = (
 MIDDLEWARE_CLASSES = ('system.views.DisableCSRFCheck',)
 
 ## K8S
-Token = "eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkYXNoYm9hcmQtYWRtaW4tdG9rZW4tdDg4amwiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGFzaGJvYXJkLWFkbWluIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiMmU1NWQ0MWEtOTI0My0xMWU5LTgzNzAtMDAwYzI5N2I0ZmU3Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmRhc2hib2FyZC1hZG1pbiJ9.ClrHiRBo9TD9qQGT5xeU-0-Cpqp0ZSQJd9-t3hD6B-YGiY-Al8zrgx8B05Ta9oUHS6cEOz_vYrqXDKm3XDFb6yTzOs5XTUTxvGUKIkZzgYI8aZxkCSYLZa-G-MtsnvbHaZj6XryPCAZhat70XFc0RVmHWC_LnGGzuAdpY2BgdaRHGERTTAYMkK8Ac8vV1s-E-lpsnU3jNgMRANp6v7C50ejjAYVTHnsCquJbIRM0uC7b5RhXbzRaOxNK33bDByDczYwgDIw1DKBaeXf3ABaJdcsQK138YxhrVUvDYy4o6j5obmGotGPrIv9XBhS7kgin289gTq5A6KT7aGmZjZPsYw"
+Token = "REDACTED_K8S_TOKENdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkYXNoYm9hcmQtYWRtaW4tdG9rZW4tdDg4amwiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGFzaGJvYXJkLWFkbWluIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiMmU1NWQ0MWEtOTI0My0xMWU5LTgzNzAtMDAwYzI5N2I0ZmU3Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmRhc2hib2FyZC1hZG1pbiJ9.ClrHiRBo9TD9qQGT5xeU-0-Cpqp0ZSQJd9-t3hD6B-YGiY-Al8zrgx8B05Ta9oUHS6cEOz_vYrqXDKm3XDFb6yTzOs5XTUTxvGUKIkZzgYI8aZxkCSYLZa-G-MtsnvbHaZj6XryPCAZhat70XFc0RVmHWC_LnGGzuAdpY2BgdaRHGERTTAYMkK8Ac8vV1s-E-lpsnU3jNgMRANp6v7C50ejjAYVTHnsCquJbIRM0uC7b5RhXbzRaOxNK33bDByDczYwgDIw1DKBaeXf3ABaJdcsQK138YxhrVUvDYy4o6j5obmGotGPrIv9XBhS7kgin289gTq5A6KT7aGmZjZPsYw"
 APISERVER = 'https://192.168.100.111:6443'
